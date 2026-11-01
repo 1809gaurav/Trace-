@@ -1,0 +1,20 @@
+@page { size: A4; margin: 18mm; }
+:root {
+  --cream: #F5F0DC;
+  --cream-deep: #EDE6C9;
+  --line: #94875F;
+  --forest: #173A2B;
+  --forest-card: #1B4332;
+  --leaf: #1F5A40;
+  --tile: #2C513F;
+  --muted: #4B5F54;
+  --mint: #9BD3AE;
+  --on-dark: #F5F0DC;
+}
+body { background: var(--cream); color: var(--forest); font: 10pt Arial, sans-serif; line-height: 1.45; }
+h1, h2 { font-family: Georgia, serif; }
+h1 { margin-bottom: 0; }
+table { border-collapse: collapse; width: 100%; font-size: 8pt; }
+th, td { border: 1px solid var(--line); padding: 5px; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+th { background: var(--cream-deep); }
+footer { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 8px; }

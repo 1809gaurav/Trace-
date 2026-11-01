@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Trace evidence report — {{ case.title }}</title>
+    <style>{{ report_css|safe }}</style>
+  </head>
+  <body>
+    <header>{% if logo_data %}<img src="{{ logo_data }}" alt="Trace logo" width="132">{% else %}<h1>Trace</h1>{% endif %}<p>Evidence recovery report</p></header>
+    <h2>Case information</h2>
+    <p><strong>Case ID:</strong> {{ case.id }}<br><strong>Case name:</strong> {{ case.title }}</p>
+    <h2>Evidence</h2>
+    {% if evidence %}<p>{{ evidence.original_filename }} · {{ evidence.size_bytes }} bytes · SHA-256 {{ evidence.sha256 }} · read-only lock {{ evidence.read_only_locked }}</p>{% else %}<p>No evidence image is attached.</p>{% endif %}
+    <h2>Recovery summary</h2>
+    <p>{{ files|length }} result(s). Confidence is a comparative estimate, not a guarantee of correctness.</p>
+    <table><thead><tr><th>Name</th><th>Type</th><th>Classification</th><th>Confidence</th><th>Size</th><th>SHA-256</th><th>Offsets</th><th>Reason</th></tr></thead>
+      <tbody>{% for file in files %}<tr><td>{{ file.name or file.public_id }}</td><td>{{ file.type }}</td><td>{{ file.classification }}</td><td>{{ '%.0f'|format(file.confidence * 100) }}%</td><td>{{ file.size_bytes }}</td><td>{{ file.sha256 }}</td><td>{{ file.offsets }}</td><td>{{ file.reason }}</td></tr>{% endfor %}</tbody>
+    </table>
+    <h2>Custody log</h2><p>Verification at report generation: {{ verification.ok }} — {{ verification.reason }}</p>
+    <ol>{% for entry in custody %}<li>{{ entry.idx }} · {{ entry.time }} · {{ entry.step }} · {{ entry.hash[:12] }}</li>{% endfor %}</ol>
+    {% if score %}<h2>Benchmark score</h2><p>Synthetic benchmark only: {{ score }}</p>{% endif %}
+    <h2>Limitations and assumptions</h2><p>Recovery can be incomplete. Reconstructed files may contain missing or altered content. This report is a court-ready format, not a legal certification.</p>
+    <footer>Trace {{ version }} · Generated {{ generated_at }} · Engine mode: {{ run.engine_mode }}</footer>
+  </body>
+</html>
