@@ -26,6 +26,20 @@ export function RunPage() {
 
   useEffect(() => {
     const socket = createRecoveryStream();
+    const refreshLiveFiles = () => {
+      void fetchResults()
+        .then((recovered) => {
+          setFiles(recovered.map(({ id, name, type, classification, confidence }) => ({
+            id,
+            name,
+            type,
+            classification,
+            confidence,
+          })));
+        })
+        .catch(() => setLoadError('Recovered file cards could not be loaded.'));
+    };
+    const refreshTimer = window.setInterval(refreshLiveFiles, 1000);
     const handleMessage = (event: Event) => {
       const message = (event as CustomEvent<RecoveryMessage>).detail as RecoveryMessage;
       setStatus(message);
@@ -60,6 +74,7 @@ export function RunPage() {
     socket.addEventListener('error', handleError);
 
     return () => {
+      window.clearInterval(refreshTimer);
       socket.removeEventListener('message', handleMessage);
       socket.removeEventListener('error', handleError);
       socket.close();

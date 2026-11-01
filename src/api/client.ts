@@ -163,7 +163,7 @@ async function sha256(value: string): Promise<string> {
 export async function uploadEvidence(file: File): Promise<UploadResult> {
   if (!USE_MOCK) {
     let caseId = await resolveCaseId();
-    if (!caseId) {
+    const createCase = async () => {
       const created = await requestJSON<{ id: string }>('/cases', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -171,13 +171,29 @@ export async function uploadEvidence(file: File): Promise<UploadResult> {
       });
       caseId = created.id;
       window.localStorage.setItem(ACTIVE_CASE_KEY, caseId);
-    }
+    };
+    if (!caseId) await createCase();
     const body = new FormData();
     body.append('file', file, file.name);
-    const uploaded = await requestJSON<{ image: { sha256: string; size_bytes: number; original_filename: string } }>(
-      `/cases/${encodeURIComponent(caseId)}/upload`,
-      { method: 'POST', body },
-    );
+    let uploaded;
+    try {
+      uploaded = await requestJSON<{ image: { sha256: string; size_bytes: number; original_filename: string } }>(
+        `/cases/${encodeURIComponent(caseId!)}/upload`,
+        { method: 'POST', body },
+      );
+    } catch (error) {
+      if (!(error instanceof APIRequestError) || error.status !== 404 || !window.localStorage.getItem(ACTIVE_CASE_KEY)) {
+        throw error;
+      }
+      window.localStorage.removeItem(ACTIVE_CASE_KEY);
+      await createCase();
+      const retryBody = new FormData();
+      retryBody.append('file', file, file.name);
+      uploaded = await requestJSON<{ image: { sha256: string; size_bytes: number; original_filename: string } }>(
+        `/cases/${encodeURIComponent(caseId!)}/upload`,
+        { method: 'POST', body: retryBody },
+      );
+    }
     return {
       fileName: uploaded.image.original_filename,
       sizeBytes: uploaded.image.size_bytes,
