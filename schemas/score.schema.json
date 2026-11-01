@@ -1,0 +1,222 @@
+{
+ "$defs": {
+  "CalibrationBucket": {
+   "additionalProperties": false,
+   "properties": {
+    "lower": {
+     "maximum": 1,
+     "minimum": 0,
+     "title": "Lower",
+     "type": "number"
+    },
+    "upper": {
+     "maximum": 1,
+     "minimum": 0,
+     "title": "Upper",
+     "type": "number"
+    },
+    "count": {
+     "minimum": 0,
+     "title": "Count",
+     "type": "integer"
+    },
+    "correct_rate": {
+     "anyOf": [
+      {
+       "maximum": 1,
+       "minimum": 0,
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Correct Rate"
+    }
+   },
+   "required": [
+    "lower",
+    "upper",
+    "count"
+   ],
+   "title": "CalibrationBucket",
+   "type": "object"
+  },
+  "PerFileScore": {
+   "additionalProperties": false,
+   "properties": {
+    "ground_truth_id": {
+     "title": "Ground Truth Id",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "status": {
+     "enum": [
+      "exact",
+      "partial",
+      "missed",
+      "unrecoverable"
+     ],
+     "title": "Status",
+     "type": "string"
+    },
+    "completeness": {
+     "maximum": 1,
+     "minimum": 0,
+     "title": "Completeness",
+     "type": "number"
+    },
+    "classification_expected": {
+     "title": "Classification Expected",
+     "type": "string"
+    },
+    "classification_got": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Classification Got"
+    },
+    "confidence": {
+     "anyOf": [
+      {
+       "maximum": 1,
+       "minimum": 0,
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Confidence"
+    },
+    "matched_result_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Matched Result Id"
+    }
+   },
+   "required": [
+    "ground_truth_id",
+    "name",
+    "status",
+    "completeness",
+    "classification_expected",
+    "classification_got"
+   ],
+   "title": "PerFileScore",
+   "type": "object"
+  }
+ },
+ "additionalProperties": false,
+ "properties": {
+  "recovered": {
+   "minimum": 0,
+   "title": "Recovered",
+   "type": "integer"
+  },
+  "expected": {
+   "minimum": 0,
+   "title": "Expected",
+   "type": "integer"
+  },
+  "precision": {
+   "maximum": 1,
+   "minimum": 0,
+   "title": "Precision",
+   "type": "number"
+  },
+  "completeness": {
+   "maximum": 1,
+   "minimum": 0,
+   "title": "Completeness",
+   "type": "number"
+  },
+  "recall": {
+   "maximum": 1,
+   "minimum": 0,
+   "title": "Recall",
+   "type": "number"
+  },
+  "false_positives": {
+   "minimum": 0,
+   "title": "False Positives",
+   "type": "integer"
+  },
+  "false_positive_rate": {
+   "maximum": 1,
+   "minimum": 0,
+   "title": "False Positive Rate",
+   "type": "number"
+  },
+  "metadata_accuracy": {
+   "maximum": 1,
+   "minimum": 0,
+   "title": "Metadata Accuracy",
+   "type": "number"
+  },
+  "classification_accuracy": {
+   "maximum": 1,
+   "minimum": 0,
+   "title": "Classification Accuracy",
+   "type": "number"
+  },
+  "overconfident_errors": {
+   "minimum": 0,
+   "title": "Overconfident Errors",
+   "type": "integer"
+  },
+  "image_integrity_ok": {
+   "title": "Image Integrity Ok",
+   "type": "boolean"
+  },
+  "per_file": {
+   "items": {
+    "$ref": "#/$defs/PerFileScore"
+   },
+   "title": "Per File",
+   "type": "array"
+  },
+  "calibration": {
+   "items": {
+    "$ref": "#/$defs/CalibrationBucket"
+   },
+   "title": "Calibration",
+   "type": "array"
+  }
+ },
+ "required": [
+  "recovered",
+  "expected",
+  "precision",
+  "completeness",
+  "recall",
+  "false_positives",
+  "false_positive_rate",
+  "metadata_accuracy",
+  "classification_accuracy",
+  "overconfident_errors",
+  "image_integrity_ok",
+  "per_file",
+  "calibration"
+ ],
+ "title": "Score",
+ "type": "object",
+ "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

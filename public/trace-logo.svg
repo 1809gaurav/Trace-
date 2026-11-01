@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96" viewBox="0 0 360 96" fill="none">
+  <title>Trace logo placeholder</title>
+  <rect x="4" y="4" width="88" height="88" rx="24" fill="#EDE4CE" stroke="#1F3D2B" stroke-width="4"/>
+  <path d="M25 29h46v10H53v34H43V39H25V29Z" fill="#1F3D2B"/>
+  <circle cx="69" cy="68" r="8" fill="#6F8F4E"/>
+  <text x="112" y="67" fill="#1F3D2B" font-family="Georgia, serif" font-size="41" font-weight="700" letter-spacing="-2">Trace</text>
+</svg>

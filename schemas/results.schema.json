@@ -1,0 +1,283 @@
+{
+ "$defs": {
+  "Offset": {
+   "additionalProperties": false,
+   "properties": {
+    "start": {
+     "minimum": 0,
+     "title": "Start",
+     "type": "integer"
+    },
+    "end": {
+     "minimum": 0,
+     "title": "End",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "start",
+    "end"
+   ],
+   "title": "Offset",
+   "type": "object"
+  },
+  "RecoveredFile": {
+   "additionalProperties": false,
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Name"
+    },
+    "type": {
+     "enum": [
+      "jpeg",
+      "png",
+      "pdf",
+      "mp4",
+      "dvr",
+      "unknown"
+     ],
+     "title": "Type",
+     "type": "string"
+    },
+    "source": {
+     "enum": [
+      "fat32",
+      "carver",
+      "fragments",
+      "dvrlike"
+     ],
+     "title": "Source",
+     "type": "string"
+    },
+    "stage": {
+     "title": "Stage",
+     "type": "string"
+    },
+    "classification": {
+     "enum": [
+      "intact",
+      "carved",
+      "reconstructed",
+      "partial"
+     ],
+     "title": "Classification",
+     "type": "string"
+    },
+    "confidence": {
+     "maximum": 1,
+     "minimum": 0,
+     "title": "Confidence",
+     "type": "number"
+    },
+    "reason": {
+     "title": "Reason",
+     "type": "string"
+    },
+    "offsets": {
+     "items": {
+      "$ref": "#/$defs/Offset"
+     },
+     "title": "Offsets",
+     "type": "array"
+    },
+    "size_bytes": {
+     "minimum": 0,
+     "title": "Size Bytes",
+     "type": "integer"
+    },
+    "sha256": {
+     "pattern": "^[0-9a-f]{64}$",
+     "title": "Sha256",
+     "type": "string"
+    },
+    "output_path": {
+     "title": "Output Path",
+     "type": "string"
+    },
+    "timestamps": {
+     "$ref": "#/$defs/Timestamps"
+    },
+    "metadata": {
+     "additionalProperties": true,
+     "title": "Metadata",
+     "type": "object"
+    },
+    "warnings": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Warnings",
+     "type": "array"
+    }
+   },
+   "required": [
+    "id",
+    "name",
+    "type",
+    "source",
+    "stage",
+    "classification",
+    "confidence",
+    "reason",
+    "offsets",
+    "size_bytes",
+    "sha256",
+    "output_path",
+    "timestamps",
+    "metadata",
+    "warnings"
+   ],
+   "title": "RecoveredFile",
+   "type": "object"
+  },
+  "ResultImage": {
+   "additionalProperties": false,
+   "properties": {
+    "path": {
+     "title": "Path",
+     "type": "string"
+    },
+    "sha256": {
+     "pattern": "^[0-9a-f]{64}$",
+     "title": "Sha256",
+     "type": "string"
+    },
+    "size_bytes": {
+     "minimum": 0,
+     "title": "Size Bytes",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "path",
+    "sha256",
+    "size_bytes"
+   ],
+   "title": "ResultImage",
+   "type": "object"
+  },
+  "ResultsSummary": {
+   "additionalProperties": false,
+   "properties": {
+    "total": {
+     "minimum": 0,
+     "title": "Total",
+     "type": "integer"
+    },
+    "by_classification": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "title": "By Classification",
+     "type": "object"
+    }
+   },
+   "required": [
+    "total",
+    "by_classification"
+   ],
+   "title": "ResultsSummary",
+   "type": "object"
+  },
+  "Timestamps": {
+   "additionalProperties": false,
+   "properties": {
+    "created": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Created"
+    },
+    "modified": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Modified"
+    },
+    "accessed": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Accessed"
+    }
+   },
+   "title": "Timestamps",
+   "type": "object"
+  }
+ },
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "const": "1.0",
+   "title": "Schema Version",
+   "type": "string"
+  },
+  "case_id": {
+   "title": "Case Id",
+   "type": "string"
+  },
+  "tool_version": {
+   "title": "Tool Version",
+   "type": "string"
+  },
+  "generated_at": {
+   "title": "Generated At",
+   "type": "string"
+  },
+  "image": {
+   "$ref": "#/$defs/ResultImage"
+  },
+  "files": {
+   "items": {
+    "$ref": "#/$defs/RecoveredFile"
+   },
+   "title": "Files",
+   "type": "array"
+  },
+  "summary": {
+   "$ref": "#/$defs/ResultsSummary"
+  }
+ },
+ "required": [
+  "schema_version",
+  "case_id",
+  "tool_version",
+  "generated_at",
+  "image",
+  "files",
+  "summary"
+ ],
+ "title": "Results",
+ "type": "object",
+ "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

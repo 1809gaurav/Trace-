@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case-b1ec7cb63456",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-11-01T05:20:46.602182Z",
+  "image": {
+    "path": "disk.img",
+    "sha256": "b1ec7cb63456ba5c729122da5dead109f64d73188fbbce427fe35b571899d43b",
+    "size_bytes": 134217728
+  },
+  "files": [
+    {
+      "id": "f-001",
+      "name": "_NT0001.JPG",
+      "type": "jpeg",
+      "source": "fat32",
+      "stage": "fat32",
+      "classification": "intact",
+      "confidence": 0.92,
+      "reason": "Recovered from a deleted directory entry by assuming its data was contiguous; the whole file validates.",
+      "offsets": [
+        {
+          "start": 1057792,
+          "end": 1114992
+        }
+      ],
+      "size_bytes": 57200,
+      "sha256": "9c1d5fef7b1def408ca341e10bae72a88bdbfafca87dbe0d02eb3b3b555238b2",
+      "output_path": "f-001.jpg",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-002",
+      "name": "_NT0002.JPG",
+      "type": "jpeg",
+      "source": "fat32",
+      "stage": "fat32",
+      "classification": "intact",
+      "confidence": 0.92,
+      "reason": "Recovered from a deleted directory entry by assuming its data was contiguous; the whole file validates.",
+      "offsets": [
+        {
+          "start": 1115136,
+          "end": 1174499
+        }
+      ],
+      "size_bytes": 59363,
+      "sha256": "b17bbb5c888a916cdd19382f6ee053f6cbcb82637738c909eb2e56aa85c2aecf",
+      "output_path": "f-002.jpg",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-003",
+      "name": "_NT0003.JPG",
+      "type": "jpeg",
+      "source": "fat32",
+      "stage": "fat32",
+      "classification": "intact",
+      "confidence": 0.92,
+      "reason": "Recovered from a deleted directory entry by assuming its data was contiguous; the whole file validates.",
+      "offsets": [
+        {
+          "start": 1174528,
+          "end": 1221953
+        }
+      ],
+      "size_bytes": 47425,
+      "sha256": "cdaa3623285f8cee0c7b4e73e02d8406b9726e4dce2f7546ff0ff587be583f59",
+      "output_path": "f-003.jpg",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-004",
+      "name": "_NT0004.PDF",
+      "type": "pdf",
+      "source": "fat32",
+      "stage": "fat32",
+      "classification": "intact",
+      "confidence": 0.92,
+      "reason": "Recovered from a deleted directory entry by assuming its data was contiguous; the whole file validates.",
+      "offsets": [
+        {
+          "start": 1222656,
+          "end": 1224029
+        }
+      ],
+      "size_bytes": 1373,
+      "sha256": "b4ba5062dffbee7cd7abaec74e9250f08e80f287c8e262e147b3aa982af4efff",
+      "output_path": "f-004.pdf",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {
+        "pdf_creation_date": "2000-01-01T00:00:00Z"
+      },
+      "warnings": [
+        "fat_time_disagrees_with_media_timestamp"
+      ]
+    },
+    {
+      "id": "f-005",
+      "name": "_NT0005.PNG",
+      "type": "png",
+      "source": "fat32",
+      "stage": "fat32",
+      "classification": "intact",
+      "confidence": 0.92,
+      "reason": "Recovered from a deleted directory entry by assuming its data was contiguous; the whole file validates.",
+      "offsets": [
+        {
+          "start": 1224704,
+          "end": 1231915
+        }
+      ],
+      "size_bytes": 7211,
+      "sha256": "f280e06114473dcfe91fdc2a0235d6f05ae187297926c0db8c7a832a983f1fb0",
+      "output_path": "f-005.png",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-006",
+      "name": "_NT0006.PNG",
+      "type": "png",
+      "source": "fat32",
+      "stage": "fat32",
+      "classification": "intact",
+      "confidence": 0.92,
+      "reason": "Recovered from a deleted directory entry by assuming its data was contiguous; the whole file validates.",
+      "offsets": [
+        {
+          "start": 1232896,
+          "end": 1239591
+        }
+      ],
+      "size_bytes": 6695,
+      "sha256": "3cd3e58055e416c808d310f13d9724fff6e27c43d45d3dad2c7d7f57074b4bb6",
+      "output_path": "f-006.png",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-007",
+      "name": null,
+      "type": "jpeg",
+      "source": "carver",
+      "stage": "carving",
+      "classification": "carved",
+      "confidence": 0.78,
+      "reason": "Found by its file signature; the whole file validates, but its name and dates were not recovered.",
+      "offsets": [
+        {
+          "start": 1240064,
+          "end": 1291190
+        }
+      ],
+      "size_bytes": 51126,
+      "sha256": "af7a9365016b60fb64e4a16f90435b2e678fd45676a262fb6c8808ae7946b4aa",
+      "output_path": "f-007.jpg",
+      "timestamps": {
+        "created": null,
+        "modified": null,
+        "accessed": null
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-008",
+      "name": null,
+      "type": "jpeg",
+      "source": "carver",
+      "stage": "carving",
+      "classification": "carved",
+      "confidence": 0.78,
+      "reason": "Found by its file signature; the whole file validates, but its name and dates were not recovered.",
+      "offsets": [
+        {
+          "start": 1291264,
+          "end": 1344656
+        }
+      ],
+      "size_bytes": 53392,
+      "sha256": "55cda5e359733a793b430294eb2c3f8d4c710a0d6083196c00a50b842437b274",
+      "output_path": "f-008.jpg",
+      "timestamps": {
+        "created": null,
+        "modified": null,
+        "accessed": null
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-009",
+      "name": null,
+      "type": "jpeg",
+      "source": "carver",
+      "stage": "carving",
+      "classification": "carved",
+      "confidence": 0.78,
+      "reason": "Found by its file signature; the whole file validates, but its name and dates were not recovered.",
+      "offsets": [
+        {
+          "start": 1345536,
+          "end": 1381327
+        }
+      ],
+      "size_bytes": 35791,
+      "sha256": "218257ba413e86486418e301f6e72f3743df15ea629f7a2ed801df5e5e493675",
+      "output_path": "f-009.jpg",
+      "timestamps": {
+        "created": null,
+        "modified": null,
+        "accessed": null
+      },
+      "metadata": {},
+      "warnings": []
+    },
+    {
+      "id": "f-010",
+      "name": null,
+      "type": "pdf",
+      "source": "carver",
+      "stage": "carving",
+      "classification": "carved",
+      "confidence": 0.78,
+      "reason": "Found by its file signature; the whole file validates, but its name and dates were not recovered.",
+      "offsets": [
+        {
+          "start": 1381376,
+          "end": 1382749
+        }
+      ],
+      "size_bytes": 1373,
+      "sha256": "3c75d61114122c085ac3e412849171f90f315447d734037251d456f5c1117abc",
+      "output_path": "f-010.pdf",
+      "timestamps": {
+        "created": null,
+        "modified": null,
+        "accessed": null
+      },
+      "metadata": {
+        "pdf_creation_date": "2000-01-01T00:00:00Z"
+      },
+      "warnings": []
+    },
+    {
+      "id": "f-011",
+      "name": null,
+      "type": "pdf",
+      "source": "carver",
+      "stage": "carving",
+      "classification": "carved",
+      "confidence": 0.78,
+      "reason": "Found by its file signature; the whole file validates, but its name and dates were not recovered.",
+      "offsets": [
+        {
+          "start": 1383424,
+          "end": 1384797
+        }
+      ],
+      "size_bytes": 1373,
+      "sha256": "29f91a3e471f45208cc7898cb2c618a91ee2a96041228effd19e18badcbfe2c2",
+      "output_path": "f-011.pdf",
+      "timestamps": {
+        "created": null,
+        "modified": null,
+        "accessed": null
+      },
+      "metadata": {
+        "pdf_creation_date": "2000-01-01T00:00:00Z"
+      },
+      "warnings": []
+    },
+    {
+      "id": "f-012",
+      "name": null,
+      "type": "dvr",
+      "source": "carver",
+      "stage": "carving",
+      "classification": "carved",
+      "confidence": 0.78,
+      "reason": "Found by its file signature; the whole file validates, but its name and dates were not recovered.",
+      "offsets": [
+        {
+          "start": 1385472,
+          "end": 1517979
+        }
+      ],
+      "size_bytes": 132507,
+      "sha256": "c2e750ff63d37dc8d2382f082d2b8830d69790c6820709b79698529c31aedfb5",
+      "output_path": "f-012.dvr",
+      "timestamps": {
+        "created": null,
+        "modified": null,
+        "accessed": null
+      },
+      "metadata": {
+        "frame_count": 36,
+        "start_time": "2026-01-01T10:58:00.000Z",
+        "end_time": "2026-01-01T10:58:35.000Z"
+      },
+      "warnings": []
+    },
+    {
+      "id": "f-013",
+      "name": "_H02_0~1.DVR",
+      "type": "dvr",
+      "source": "fat32",
+      "stage": "fat32",
+      "classification": "intact",
+      "confidence": 0.92,
+      "reason": "Recovered from a deleted directory entry by assuming its data was contiguous; the whole file validates.",
+      "offsets": [
+        {
+          "start": 1518592,
+          "end": 1654399
+        }
+      ],
+      "size_bytes": 135807,
+      "sha256": "48d5a1571eb70b62c81b899df05c9cbe86661fb968e85d3651bbe397d66a8ba3",
+      "output_path": "f-013.dvr",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {
+        "frame_count": 37,
+        "start_time": "2026-01-01T10:59:00.000Z",
+        "end_time": "2026-01-01T10:59:36.000Z"
+      },
+      "warnings": []
+    },
+    {
+      "id": "f-014",
+      "name": "_RAG0001.JPG",
+      "type": "jpeg",
+      "source": "fragments",
+      "stage": "fragments",
+      "classification": "reconstructed",
+      "confidence": 0.621346799108044,
+      "reason": "Rebuilt from two validated pieces; the missing gap was inferred from the image.",
+      "offsets": [
+        {
+          "start": 6174720,
+          "end": 6212608
+        },
+        {
+          "start": 6215680,
+          "end": 6252255
+        }
+      ],
+      "size_bytes": 74463,
+      "sha256": "fbb54bf1ec209323bb8b4ee182ab0cebe45b1d3401d9004455fa436c414ac268",
+      "output_path": "f-014.jpg",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {
+        "search_cost": 13
+      },
+      "warnings": []
+    },
+    {
+      "id": "f-015",
+      "name": "_RAG0002.JPG",
+      "type": "jpeg",
+      "source": "fragments",
+      "stage": "fragments",
+      "classification": "reconstructed",
+      "confidence": 0.621346799108044,
+      "reason": "Rebuilt from two validated pieces; the missing gap was inferred from the image.",
+      "offsets": [
+        {
+          "start": 6256640,
+          "end": 6289408
+        },
+        {
+          "start": 6292480,
+          "end": 6323361
+        }
+      ],
+      "size_bytes": 63649,
+      "sha256": "0edc0c66f46e2351f2c00312707e75d3cfcfeefafd09d5e6da12e49aa30e0890",
+      "output_path": "f-015.jpg",
+      "timestamps": {
+        "created": "2026-01-01T10:00:00Z",
+        "modified": "2026-01-01T10:00:00Z",
+        "accessed": "2026-01-01T00:00:00Z"
+      },
+      "metadata": {
+        "search_cost": 13
+      },
+      "warnings": []
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "by_classification": {
+      "intact": 7,
+      "carved": 6,
+      "reconstructed": 2,
+      "partial": 0
+    }
+  }
+}

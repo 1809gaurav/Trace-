@@ -1,0 +1,107 @@
+[
+  {
+    "index": 0,
+    "time": "2026-11-01T05:20:45Z",
+    "step": "IMAGE_OPENED",
+    "details": {
+      "path": "disk.img",
+      "size_bytes": 134217728,
+      "sha256": "b1ec7cb63456ba5c729122da5dead109f64d73188fbbce427fe35b571899d43b"
+    },
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "b20212b31f2ed03c68a61eec6f036da575da16202ee957558499ed6bc8faf248"
+  },
+  {
+    "index": 1,
+    "time": "2026-11-01T05:20:45Z",
+    "step": "FILESYSTEM_PARSED",
+    "details": {
+      "fs_type": "FAT32",
+      "live_count": 0,
+      "deleted_count": 7,
+      "warnings": [
+        "cluster 145530603 is out of range",
+        "short FAT chain for CARVE0001.JPG",
+        "cluster 76791332 is out of range",
+        "short FAT chain for CARVE0002.JPG",
+        "cluster 139019168 is out of range",
+        "short FAT chain for CARVE0003.JPG",
+        "cluster 144539810 is out of range",
+        "short FAT chain for CARVE001.PDF",
+        "cluster 260819596 is out of range",
+        "short FAT chain for CARVE002.PDF",
+        "cluster 238451439 is out of range",
+        "short FAT chain for CH01_0001.DVR",
+        "cluster 96961479 is out of range",
+        "short FAT chain for OVER0001.JPG",
+        "cluster 109424971 is out of range",
+        "short FAT chain for OVER0002.JPG"
+      ]
+    },
+    "prev_hash": "b20212b31f2ed03c68a61eec6f036da575da16202ee957558499ed6bc8faf248",
+    "hash": "8f6fd6fc29ad62f41bfbf8d18d696ac24596cbd651dc2895232f9926734696c8"
+  },
+  {
+    "index": 2,
+    "time": "2026-11-01T05:20:45Z",
+    "step": "CARVING_DONE",
+    "details": {
+      "files_found": 6
+    },
+    "prev_hash": "8f6fd6fc29ad62f41bfbf8d18d696ac24596cbd651dc2895232f9926734696c8",
+    "hash": "45d81e4838ac2f10fc8de2aca704d0ae920729a4649b117c6d73b07827208878"
+  },
+  {
+    "index": 3,
+    "time": "2026-11-01T05:20:46Z",
+    "step": "FRAGMENTS_JOINED",
+    "details": {
+      "files_found": 2,
+      "search_cost": 26
+    },
+    "prev_hash": "45d81e4838ac2f10fc8de2aca704d0ae920729a4649b117c6d73b07827208878",
+    "hash": "f4a6f2e7b5315d8f7f611a8a46cdab4e96542ab050e638906de3a6fb72841356"
+  },
+  {
+    "index": 4,
+    "time": "2026-11-01T05:20:46Z",
+    "step": "FILES_CLASSIFIED",
+    "details": {
+      "intact": 7,
+      "carved": 6,
+      "reconstructed": 2,
+      "partial": 0
+    },
+    "prev_hash": "f4a6f2e7b5315d8f7f611a8a46cdab4e96542ab050e638906de3a6fb72841356",
+    "hash": "c3620fa08af9dcddfcb5b63a261942e7d99b2646f9c072f0cd95672c91c1691b"
+  },
+  {
+    "index": 5,
+    "time": "2026-11-01T05:20:46Z",
+    "step": "RESULTS_WRITTEN",
+    "details": {
+      "path": "results.json",
+      "sha256": "b092804c5db5c9613fc4caf2120d0a9eebe69a7222d43ff92af5e3a8131bcbce"
+    },
+    "prev_hash": "c3620fa08af9dcddfcb5b63a261942e7d99b2646f9c072f0cd95672c91c1691b",
+    "hash": "20edd368a537ba7fd280690e3d25e38ccbfe2e0dcec06e40d9687928133ed63a"
+  },
+  {
+    "index": 6,
+    "time": "2026-11-01T05:20:46Z",
+    "step": "IMAGE_REVERIFIED",
+    "details": {
+      "hash_equal": {
+        "ok": true,
+        "expected_sha256": "b1ec7cb63456ba5c729122da5dead109f64d73188fbbce427fe35b571899d43b",
+        "actual_sha256": "b1ec7cb63456ba5c729122da5dead109f64d73188fbbce427fe35b571899d43b",
+        "size_before": 134217728,
+        "size_after": 134217728,
+        "mtime_changed": false,
+        "reason": "image is intact and unchanged."
+      }
+    },
+    "prev_hash": "20edd368a537ba7fd280690e3d25e38ccbfe2e0dcec06e40d9687928133ed63a",
+    "hash": "e3c35fe1f166ec007b9fab9a577ce15c04c22f2d0a861cdc38ca1b3ac43683d1"
+  }
+]

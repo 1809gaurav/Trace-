@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case-001",
+  "tool_version": "0.1.0",
+  "generated_at": "2026-01-01T00:00:00Z",
+  "image": {
+    "path": "disk.img",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "size_bytes": 134217728
+  },
+  "files": [],
+  "summary": {
+    "total": 0,
+    "by_classification": {}
+  }
+}

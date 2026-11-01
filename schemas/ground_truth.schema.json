@@ -1,0 +1,331 @@
+{
+ "$defs": {
+  "Decoy": {
+   "additionalProperties": false,
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "kind": {
+     "title": "Kind",
+     "type": "string"
+    },
+    "start": {
+     "minimum": 0,
+     "title": "Start",
+     "type": "integer"
+    },
+    "end": {
+     "minimum": 0,
+     "title": "End",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "id",
+    "kind",
+    "start",
+    "end"
+   ],
+   "title": "Decoy",
+   "type": "object"
+  },
+  "GroundTruthFile": {
+   "additionalProperties": false,
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "jpeg",
+      "png",
+      "pdf",
+      "mp4",
+      "dvr",
+      "unknown"
+     ],
+     "title": "Type",
+     "type": "string"
+    },
+    "original_sha256": {
+     "pattern": "^[0-9a-f]{64}$",
+     "title": "Original Sha256",
+     "type": "string"
+    },
+    "size_bytes": {
+     "minimum": 0,
+     "title": "Size Bytes",
+     "type": "integer"
+    },
+    "state": {
+     "enum": [
+      "live",
+      "deleted_contiguous",
+      "deleted_fragmented",
+      "fs_corrupted_contiguous",
+      "overwritten_partial",
+      "dvr_live",
+      "dvr_deleted"
+     ],
+     "title": "State",
+     "type": "string"
+    },
+    "recoverable": {
+     "title": "Recoverable",
+     "type": "boolean"
+    },
+    "fragments": {
+     "items": {
+      "$ref": "#/$defs/Offset"
+     },
+     "title": "Fragments",
+     "type": "array"
+    },
+    "dir_entry_present": {
+     "title": "Dir Entry Present",
+     "type": "boolean"
+    },
+    "fs_timestamps": {
+     "$ref": "#/$defs/Timestamps"
+    },
+    "expected_via": {
+     "enum": [
+      "fat32",
+      "carving",
+      "reconstruction",
+      "none"
+     ],
+     "title": "Expected Via",
+     "type": "string"
+    },
+    "expected_classification": {
+     "enum": [
+      "intact",
+      "carved",
+      "reconstructed",
+      "partial"
+     ],
+     "title": "Expected Classification",
+     "type": "string"
+    },
+    "acceptable_classifications": {
+     "items": {
+      "enum": [
+       "intact",
+       "carved",
+       "reconstructed",
+       "partial"
+      ],
+      "type": "string"
+     },
+     "title": "Acceptable Classifications",
+     "type": "array"
+    },
+    "metadata": {
+     "additionalProperties": true,
+     "title": "Metadata",
+     "type": "object"
+    }
+   },
+   "required": [
+    "id",
+    "name",
+    "type",
+    "original_sha256",
+    "size_bytes",
+    "state",
+    "recoverable",
+    "fragments",
+    "dir_entry_present",
+    "fs_timestamps",
+    "expected_via",
+    "expected_classification",
+    "acceptable_classifications",
+    "metadata"
+   ],
+   "title": "GroundTruthFile",
+   "type": "object"
+  },
+  "GroundTruthImage": {
+   "additionalProperties": false,
+   "properties": {
+    "path": {
+     "title": "Path",
+     "type": "string"
+    },
+    "sha256": {
+     "pattern": "^[0-9a-f]{64}$",
+     "title": "Sha256",
+     "type": "string"
+    },
+    "size_bytes": {
+     "minimum": 0,
+     "title": "Size Bytes",
+     "type": "integer"
+    },
+    "bytes_per_sector": {
+     "exclusiveMinimum": 0,
+     "title": "Bytes Per Sector",
+     "type": "integer"
+    },
+    "sectors_per_cluster": {
+     "exclusiveMinimum": 0,
+     "title": "Sectors Per Cluster",
+     "type": "integer"
+    },
+    "cluster_size": {
+     "exclusiveMinimum": 0,
+     "title": "Cluster Size",
+     "type": "integer"
+    },
+    "data_start_offset": {
+     "minimum": 0,
+     "title": "Data Start Offset",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "path",
+    "sha256",
+    "size_bytes",
+    "bytes_per_sector",
+    "sectors_per_cluster",
+    "cluster_size",
+    "data_start_offset"
+   ],
+   "title": "GroundTruthImage",
+   "type": "object"
+  },
+  "Offset": {
+   "additionalProperties": false,
+   "properties": {
+    "start": {
+     "minimum": 0,
+     "title": "Start",
+     "type": "integer"
+    },
+    "end": {
+     "minimum": 0,
+     "title": "End",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "start",
+    "end"
+   ],
+   "title": "Offset",
+   "type": "object"
+  },
+  "Timestamps": {
+   "additionalProperties": false,
+   "properties": {
+    "created": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Created"
+    },
+    "modified": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Modified"
+    },
+    "accessed": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Accessed"
+    }
+   },
+   "title": "Timestamps",
+   "type": "object"
+  }
+ },
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "const": "1.0",
+   "title": "Schema Version",
+   "type": "string"
+  },
+  "scenario": {
+   "title": "Scenario",
+   "type": "string"
+  },
+  "seed": {
+   "title": "Seed",
+   "type": "integer"
+  },
+  "pillow_version": {
+   "title": "Pillow Version",
+   "type": "string"
+  },
+  "image": {
+   "$ref": "#/$defs/GroundTruthImage"
+  },
+  "files": {
+   "items": {
+    "$ref": "#/$defs/GroundTruthFile"
+   },
+   "title": "Files",
+   "type": "array"
+  },
+  "decoys": {
+   "items": {
+    "$ref": "#/$defs/Decoy"
+   },
+   "title": "Decoys",
+   "type": "array"
+  },
+  "expected_error": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Expected Error"
+  }
+ },
+ "required": [
+  "schema_version",
+  "scenario",
+  "seed",
+  "pillow_version",
+  "image",
+  "files"
+ ],
+ "title": "GroundTruth",
+ "type": "object",
+ "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

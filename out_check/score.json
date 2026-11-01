@@ -1,0 +1,217 @@
+{
+  "recovered": 15,
+  "expected": 15,
+  "precision": 1.0,
+  "completeness": 1.0,
+  "recall": 1.0,
+  "false_positives": 0,
+  "false_positive_rate": 0.0,
+  "metadata_accuracy": 0.6212121212121212,
+  "classification_accuracy": 1.0,
+  "overconfident_errors": 0,
+  "image_integrity_ok": true,
+  "per_file": [
+    {
+      "ground_truth_id": "gt-int-1",
+      "name": "INT0001.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "intact",
+      "confidence": 0.92,
+      "matched_result_id": "f-001"
+    },
+    {
+      "ground_truth_id": "gt-int-2",
+      "name": "INT0002.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "intact",
+      "confidence": 0.92,
+      "matched_result_id": "f-002"
+    },
+    {
+      "ground_truth_id": "gt-int-3",
+      "name": "INT0003.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "intact",
+      "confidence": 0.92,
+      "matched_result_id": "f-003"
+    },
+    {
+      "ground_truth_id": "gt-int-4",
+      "name": "INT0004.PDF",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "intact",
+      "confidence": 0.92,
+      "matched_result_id": "f-004"
+    },
+    {
+      "ground_truth_id": "gt-int-5",
+      "name": "INT0005.PNG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "intact",
+      "confidence": 0.92,
+      "matched_result_id": "f-005"
+    },
+    {
+      "ground_truth_id": "gt-int-6",
+      "name": "INT0006.PNG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "intact",
+      "confidence": 0.92,
+      "matched_result_id": "f-006"
+    },
+    {
+      "ground_truth_id": "gt-carve-1",
+      "name": "CARVE0001.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "carved",
+      "classification_got": "carved",
+      "confidence": 0.78,
+      "matched_result_id": "f-007"
+    },
+    {
+      "ground_truth_id": "gt-carve-2",
+      "name": "CARVE0002.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "carved",
+      "classification_got": "carved",
+      "confidence": 0.78,
+      "matched_result_id": "f-008"
+    },
+    {
+      "ground_truth_id": "gt-carve-3",
+      "name": "CARVE0003.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "carved",
+      "classification_got": "carved",
+      "confidence": 0.78,
+      "matched_result_id": "f-009"
+    },
+    {
+      "ground_truth_id": "gt-carve-4",
+      "name": "CARVE001.PDF",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "carved",
+      "classification_got": "carved",
+      "confidence": 0.78,
+      "matched_result_id": "f-010"
+    },
+    {
+      "ground_truth_id": "gt-carve-5",
+      "name": "CARVE002.PDF",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "carved",
+      "classification_got": "carved",
+      "confidence": 0.78,
+      "matched_result_id": "f-011"
+    },
+    {
+      "ground_truth_id": "gt-frag-01",
+      "name": "FRAG0001.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "reconstructed",
+      "classification_got": "reconstructed",
+      "confidence": 0.621346799108044,
+      "matched_result_id": "f-014"
+    },
+    {
+      "ground_truth_id": "gt-frag-02",
+      "name": "FRAG0002.JPG",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "reconstructed",
+      "classification_got": "reconstructed",
+      "confidence": 0.621346799108044,
+      "matched_result_id": "f-015"
+    },
+    {
+      "ground_truth_id": "gt-dvr-1",
+      "name": "CH01_0001.DVR",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "carved",
+      "confidence": 0.78,
+      "matched_result_id": "f-012"
+    },
+    {
+      "ground_truth_id": "gt-dvr-2",
+      "name": "CH02_0002.DVR",
+      "status": "exact",
+      "completeness": 1.0,
+      "classification_expected": "intact",
+      "classification_got": "intact",
+      "confidence": 0.92,
+      "matched_result_id": "f-013"
+    },
+    {
+      "ground_truth_id": "gt-over-1",
+      "name": "OVER0001.JPG",
+      "status": "unrecoverable",
+      "completeness": 0.0,
+      "classification_expected": "partial",
+      "classification_got": null,
+      "confidence": null,
+      "matched_result_id": null
+    },
+    {
+      "ground_truth_id": "gt-over-2",
+      "name": "OVER0002.JPG",
+      "status": "unrecoverable",
+      "completeness": 0.0,
+      "classification_expected": "partial",
+      "classification_got": null,
+      "confidence": null,
+      "matched_result_id": null
+    }
+  ],
+  "calibration": [
+    {
+      "lower": 0.0,
+      "upper": 0.3,
+      "count": 0,
+      "correct_rate": null
+    },
+    {
+      "lower": 0.3,
+      "upper": 0.5,
+      "count": 0,
+      "correct_rate": null
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.7,
+      "count": 2,
+      "correct_rate": 1.0
+    },
+    {
+      "lower": 0.7,
+      "upper": 0.85,
+      "count": 6,
+      "correct_rate": 1.0
+    },
+    {
+      "lower": 0.85,
+      "upper": 1.0,
+      "count": 7,
+      "correct_rate": 1.0
+    }
+  ]
+}
